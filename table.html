@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>남녀 수강생현황</title>
+    <link href="css/table.css" rel="stylesheet">
+</head>
+<body>
+    <!-- row -> 가로 행, col -> 세로 열 -->
+    <table id="student">
+        <!-- 1) 테이블 제목 : 필수, 가장 처음에 위치함 -->
+        <caption>남녀 수강생현황</caption>
+
+        <!-- 2) 세로열을 구분 : 필수는 아님(생략할 수 있다) -->
+        <colgroup>
+            <col class="wid150">
+            <!--
+            <col class="wid200">
+            <col class="wid200">
+            18라인과 19라인을 합쳐서 20라인으로 표시-->
+            <col class="wid200" span="2">
+        </colgroup>
+
+        <!-- 테이블 컨텐츠의 내용별로 그룹
+        thead : 제목 컨텐츠의 그룹 => 내부에 th만 포함
+        tbody : 본문 컨텐츠의 그룹
+        tfoot : 푸터 컨텐츠의 그룹(없어도 된다. 필수 아님)
+        내부의 한줄을 tr이라고 하고 tr 내부의 한칸(cell)을 th(제목셀), td(데이터셀)
+         -->
+        <thead>
+            <tr> <!-- 한 줄 -->
+                <th rowspan="2">교실</th>
+                <th id="cm" colspan="2">수강생</th>
+            </tr>
+            <tr>
+                <th id="m" scope="col">남</th>
+                <th id="w" scope="col">여</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="c1" scope="row">1반</th>
+                <td headers="c1 cm m">10</td>
+                <td headers="c1 cm w">5</td>
+            </tr>
+            <tr>
+                <th id="c2" scope="row">2반</th>
+                <td headers="c2 cm m">5</td>
+                <td headers="c2 cm w">5</td>
+            </tr>
+            <tr>
+                <th id="c3" scope="row">3반</th>
+                <td headers="c3 cm m">10</td>
+                <td headers="c3 cm w">5</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row">합계</th>
+                <th>25</th>
+                <th>15</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- 테이블 접근성
+         1) 첫 번째 자식으로 제목을 작성하는 caption
+         2) 제목셀과 데이터셀을 연결하기 위해 th scope="row", th scope="col"
+         th scope="row" 제목셀과 연결된 데이터셀이 가로 행(row) 일때
+         th scope="col" 제목셀과 연결된 데이터셀이 세로 열(col) 일때
+         scope은 th 태그만 가능
+         3) rowspan과 colspan이 있는 복잡한 구조일 경우 scope만으로는 접근성을 살릴 수 없어서 다음을 추가
+         <th id="c1"> => <td headers="c1">
+     -->
+</body>
+</html>

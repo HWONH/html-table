@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* tag reset */
+body, th, td{margin: 0px;padding: 0px;}
+table{border-spacing: 0px; border-collapse: collapse;}
+
+body{font-family: "맑은 고딕", "Malgun Gothic", "나눔고딕", NanumGothic, "돋움", Dotum;font-size: 16px;color: #333;}
+#student{width: 550px; border: 1px solid #000; margin: 50px auto;}
+#student caption{font-weight: bold; color: #1e95da; font-size: 1.5em; text-decoration: underline; margin-bottom: 10px;}
+
+#student th, #student td{border: 1px solid #000; padding: 10px 0px;}
+#student .wid150{width: 150px;}
+#student .wid200{width: 200px;}
+#student th{background: #ddd;}
+#student td{text-align: center;}
+
+/* 테이블 디자인 특징
+caption : 가운데 정렬
+th : 가운데 정렬, bold로 두꺼운 글자
+th, td의 높이가 높을 경우 수직 가운데 컨텐츠가 위치함 */
